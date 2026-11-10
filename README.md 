@@ -1,0 +1,28 @@
+# AI Spam Detector
+
+Classify SMS/Email as Spam or Ham using TF-IDF + Naive Bayes.
+
+## Dataset
+SMS Spam Collection - 5,572 messages → 5,169 after dropping 403 duplicates
+- Ham: 4,516 | Spam: 653
+
+## Pipeline
+1. Explore - value_counts, missing, duplicates
+2. Clean Text - lowercase, remove punctuation/numbers, remove stopwords
+3. TF-IDF - 7,213 vocabulary, Train (4135, 7213)
+4. Train/Test Split - 80/20, random_state=42
+5. Model - Multinomial Naive Bayes
+
+## Results
+- Accuracy: 96.5%
+- Confusion Matrix: [[894, 0], [36, 104]]
+- Spam Precision: 1.00, Recall: 0.74
+- Live Demo: 3/3 correct
+
+## How to Run
+python3 -m venv .venv
+source .venv/bin/activate
+pip install pandas numpy scikit-learn
+python3 spam_detector.py
+
+GitHub: github.com/tgangese
